@@ -1,33 +1,14 @@
-import { useState } from 'react'
-// importo los modulos de firebase
-import appFirebase from '../src/credenciales'
-import {getAuth,onAuthStateChanged } from 'firebase/auth'
-const auth = getAuth(appFirebase)
-
-//importo los componentes 
-import Login from '../src/components/Login'
-import Home from '../src/components/Home' 
-
-import './App.css'
+import React from 'react';
+import Login from './components/Login'; // Ajusta la ruta según la ubicación de tu componente Login
+import './App.css'; // Importa el archivo CSS de estilos
 
 function App() {
-
-  const [usuario, setUsuario] = useState(null)
-
-  onAuthStateChanged(auth, (usuarioFirebase)=>{
-    if (usuarioFirebase){
-      setUsuario(usuarioFirebase)
-    }
-    else {
-      setUsuario(null)
-    }
-  });
-
   return (
-  <div>
-    {usuario ? <Home correoUsuario= {usuario.email}/> : <Login />}
-  </div>
-  )
+    <div className="app-container">
+      <h1 className="app-title">¡Bienvenido a mi aplicación!</h1>
+      <Login />
+    </div>
+  );
 }
 
-export default App
+export default App;
