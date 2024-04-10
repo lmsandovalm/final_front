@@ -17,7 +17,6 @@ const Login = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    
                 },
                 body: JSON.stringify({
                     "email": email,
@@ -52,6 +51,8 @@ const Login = () => {
                             <form onSubmit={handleFormSubmit}>
                                 <input 
                                     type='text' 
+                                    id='email' // Agregando id
+                                    name='email' // Agregando name
                                     placeholder='Ingresar Email' 
                                     className='cajatexto' 
                                     value={email} 
@@ -59,6 +60,8 @@ const Login = () => {
                                 />
                                 <input 
                                     type='password' 
+                                    id='password' // Agregando id
+                                    name='password' // Agregando name
                                     placeholder='Ingresar Contraseña' 
                                     className='cajatexto' 
                                     value={password} 
