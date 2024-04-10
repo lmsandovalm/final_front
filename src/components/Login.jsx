@@ -27,6 +27,8 @@ const Login = () => {
 
             if (response.ok) {
                 console.log("Inicio de sesión exitoso")
+                alert("Inicio de sesión exitoso")
+                
                 // Registro exitoso
                 // Realiza las acciones necesarias, como redireccionar al usuario a otra página
             } else {
