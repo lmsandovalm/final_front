@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ImageProlife from '../assets/usuario.png';
 import Image from '../assets/inicio.jpg';
 
@@ -17,6 +17,7 @@ const Login = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    
                 },
                 body: JSON.stringify({
                     email: email,
@@ -25,15 +26,16 @@ const Login = () => {
             });
 
             if (response.ok) {
+                console.log("Inicio de sesión exitoso")
                 // Registro exitoso
                 // Realiza las acciones necesarias, como redireccionar al usuario a otra página
             } else {
                 // Error en el registro
                 const data = await response.json();
-                setError(data.detail); // o algún otro campo de error proporcionado por la API
+                setError(data.detail); 
             }
         } catch (error) {
-            console.error('Error al registrar:', error);
+            console.error('Error al ingresar:', error);
             setError('Error de red. Por favor, inténtalo de nuevo más tarde.');
         }
     };
